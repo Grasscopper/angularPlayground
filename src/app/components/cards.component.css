@@ -1,6 +1,6 @@
 mat-card {
   background-color: #33CA7F;
-  margin: 1% auto;
+  margin: 0 auto;
   width: 50%;
 }
 
@@ -10,6 +10,32 @@ mat-card {
     width: 100%;
     border-radius: 0px;
   }
+}
+
+.new-card {
+  margin: 2% auto;
+}
+
+@media (max-width: 1000px) {
+  .new-card {
+    width: 100%;
+    margin: 7% auto;
+  }
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  border: solid;
+}
+
+.new-card-image {
+  text-align: center;
+}
+
+.new-card-header {
+  display: flex;
+  justify-content: space-between;
 }
 
 mat-form-field {
@@ -23,4 +49,8 @@ mat-label {
 input {
   margin-top: 10px;
   font-size: 19px;
+}
+
+mat-grid-tile {
+  font-size: 18px;
 }

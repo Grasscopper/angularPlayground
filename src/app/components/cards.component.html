@@ -1,18 +1,35 @@
 <mat-card>
-<mat-form-field>
-  <mat-label>Name</mat-label>
-  <input matInput placeholder="Ex: Captain America">
-</mat-form-field>
-<mat-form-field>
-  <mat-label>HP</mat-label>
-  <input matInput placeholder="Ex: 40 HP">
-</mat-form-field>
-<mat-form-field>
-  <mat-label>Special Move 1</mat-label>
-  <input matInput placeholder="Ex: Thunder">
-</mat-form-field>
-<mat-form-field>
-  <mat-label>Special Move 2</mat-label>
-  <input matInput placeholder="Ex: Throw Shield">
-</mat-form-field>
+  <h1>Create Character Card</h1>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Ex: Captain America" [(ngModel)]="name">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>HP</mat-label>
+    <input matInput placeholder="Ex: 40 HP" [(ngModel)]="hp">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Special Move 1</mat-label>
+    <input matInput placeholder="Ex: Thunder" [(ngModel)]="moveOne">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Special Move 2</mat-label>
+    <input matInput placeholder="Ex: Throw Shield" [(ngModel)]="moveTwo">
+  </mat-form-field>
+  <br/>
+  <button mat-raised-button color="primary" (click)="createCard()">Create</button>
+</mat-card>
+
+<mat-card class="new-card">
+  <div class="new-card-header">
+    <h1 style="display: inline">{{postName}} </h1>
+    <h1 style="display: inline" id="hp">{{postHp}}</h1>
+  </div>
+  <div class="new-card-image">
+  <img src="https://cf-images.us-east-1.prod.boltdns.net/v1/static/5359769168001/0a823cb0-01a9-4835-a348-c64187783ccb/d37cb96c-805c-4aa2-9f2f-e62d9eb814c7/1280x720/match/image.jpg" />
+  </div>
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>{{postMoveOne}}</mat-grid-tile>
+    <mat-grid-tile>{{postMoveTwo}}</mat-grid-tile>
+  </mat-grid-list>
 </mat-card>
