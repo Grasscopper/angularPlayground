@@ -7,8 +7,20 @@ import { Component } from '@angular/core'
 })
 
 export class CardsComponent {
-  name = "Thor"
-  naruto() {
-    this.name = "Widow"
+  name = ""
+  hp = ""
+  moveOne = ""
+  moveTwo = ""
+
+  postName = "";
+  postHp = "";
+  postMoveOne = "";
+  postMoveTwo = "";
+
+  createCard() {
+    this.postName = this.name;
+    this.postHp = this.hp;
+    this.postMoveOne = this.moveOne;
+    this.postMoveTwo = this.moveTwo;
   }
 }
