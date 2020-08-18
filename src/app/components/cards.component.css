@@ -1,0 +1,26 @@
+mat-card {
+  background-color: #33CA7F;
+  margin: 1% auto;
+  width: 50%;
+}
+
+@media (max-width: 1000px) {
+  mat-card {
+    margin: 0px;
+    width: 100%;
+    border-radius: 0px;
+  }
+}
+
+mat-form-field {
+  margin: 10px;
+}
+
+mat-label {
+  font-size: 24px;
+}
+
+input {
+  margin-top: 10px;
+  font-size: 19px;
+}
