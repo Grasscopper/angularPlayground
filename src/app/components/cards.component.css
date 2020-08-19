@@ -1,7 +1,12 @@
 mat-card {
-  background-color: #33CA7F;
+  /* background-color: #33CA7F; */
+  background-color: #009FF1;
   margin: 0 auto;
   width: 50%;
+}
+
+mat-label {
+  color: #FFFFFF;
 }
 
 @media (max-width: 1000px) {
