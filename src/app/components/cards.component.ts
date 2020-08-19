@@ -9,17 +9,23 @@ import { Component } from '@angular/core'
 export class CardsComponent {
   name = ""
   hp = ""
+  atk = ""
+  def = ""
   moveOne = ""
   moveTwo = ""
 
-  postName = "";
-  postHp = "";
-  postMoveOne = "";
-  postMoveTwo = "";
+  postName = "Captain America";
+  postHp = "200";
+  postAtk = "30";
+  postDef = "15";
+  postMoveOne = "Brute Takedown";
+  postMoveTwo = "Shield Throw";
 
   createCard() {
     this.postName = this.name;
     this.postHp = this.hp;
+    this.postAtk = this.atk;
+    this.postDef = this.def;
     this.postMoveOne = this.moveOne;
     this.postMoveTwo = this.moveTwo;
   }
