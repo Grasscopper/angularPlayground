@@ -1,3 +1,4 @@
+<mat-toolbar color="accent">Avengers Trading Cards</mat-toolbar>
 <mat-card>
   <h1>Create Character Card</h1>
   <mat-form-field>
@@ -48,4 +49,10 @@
     <mat-grid-tile>{{postMoveOne}}</mat-grid-tile>
     <mat-grid-tile>{{postMoveTwo}}</mat-grid-tile>
   </mat-grid-list>
+</mat-card>
+
+<mat-card>
+  <mat-list *ngFor="let hero of heroes">
+   <mat-list-item>{{ hero }}</mat-list-item>
+  </mat-list>
 </mat-card>
