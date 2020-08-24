@@ -1,6 +1,6 @@
-<mat-toolbar color="accent">Avengers Trading Cards</mat-toolbar>
+<mat-toolbar color="primary">Avengers Trading Cards</mat-toolbar>
 <mat-card>
-  <h1>Create Character Card</h1>
+  <h1>Character Card</h1>
   <mat-form-field>
     <mat-label>Name</mat-label>
     <input matInput placeholder="Ex: Captain America" [(ngModel)]="name">
@@ -35,6 +35,22 @@
   <button mat-raised-button color="accent" (click)="createCard()">Create</button>
 </mat-card>
 
+<mat-card class="new-card">
+  <div class="new-card-header">
+    <h1 style="display: inline">{{postName}} </h1>
+    <h1 style="display: inline" id="hp">{{postHp}} HP</h1>
+  </div>
+  <div class="new-card-image">
+  <!-- <img src="https://cf-images.us-east-1.prod.boltdns.net/v1/static/5359769168001/0a823cb0-01a9-4835-a348-c64187783ccb/d37cb96c-805c-4aa2-9f2f-e62d9eb814c7/1280x720/match/image.jpg" /> -->
+  </div>
+  <mat-grid-list cols="4" rowHeight="2:1">
+    <mat-grid-tile>ATK: {{postAtk}}</mat-grid-tile>
+    <mat-grid-tile>DEF: {{postDef}}</mat-grid-tile>
+    <mat-grid-tile>{{postMoveOne}}</mat-grid-tile>
+    <mat-grid-tile>{{postMoveTwo}}</mat-grid-tile>
+  </mat-grid-list>
+</mat-card>
+
 <mat-card>
   <h1>Post Hero</h1>
   <mat-form-field>
@@ -44,20 +60,4 @@
   <br/>
 
   <button mat-raised-button color="accent" (click)="createHero()">Post</button>
-</mat-card>
-
-<mat-card class="new-card">
-  <div class="new-card-header">
-    <h1 style="display: inline">{{postName}} </h1>
-    <h1 style="display: inline" id="hp">{{postHp}} HP</h1>
-  </div>
-  <div class="new-card-image">
-  <img src="https://cf-images.us-east-1.prod.boltdns.net/v1/static/5359769168001/0a823cb0-01a9-4835-a348-c64187783ccb/d37cb96c-805c-4aa2-9f2f-e62d9eb814c7/1280x720/match/image.jpg" />
-  </div>
-  <mat-grid-list cols="4" rowHeight="2:1">
-    <mat-grid-tile>ATK: {{postAtk}}</mat-grid-tile>
-    <mat-grid-tile>DEF: {{postDef}}</mat-grid-tile>
-    <mat-grid-tile>{{postMoveOne}}</mat-grid-tile>
-    <mat-grid-tile>{{postMoveTwo}}</mat-grid-tile>
-  </mat-grid-list>
 </mat-card>

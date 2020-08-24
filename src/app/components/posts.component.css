@@ -1,6 +1,7 @@
 mat-card {
   /* background-color: #33CA7F; */
-  background-color: #009FF1;
+  /* background-color: #009FF1; */
+  background-color: white;
   margin: 0 auto;
   width: 50%;
 }
@@ -11,4 +12,8 @@ mat-card {
     width: 100%;
     border-radius: 0px;
   }
+}
+
+.mat-list-base .mat-list-item {
+    color: black;
 }
