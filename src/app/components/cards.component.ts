@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core'
+import { Post } from '../models/post.model'
 
 @Component({
   selector: "app-cards",
@@ -14,12 +15,12 @@ export class CardsComponent {
   moveOne = ""
   moveTwo = ""
 
-  postName = "Captain America";
-  postHp = "200";
-  postAtk = "30";
-  postDef = "15";
-  postMoveOne = "Brute Takedown";
-  postMoveTwo = "Shield Throw";
+  postName = "Name";
+  postHp = "XX";
+  postAtk = "XX";
+  postDef = "XX";
+  postMoveOne = "Special Move 1";
+  postMoveTwo = "Special Move 2";
 
   createCard() {
     this.postName = this.name;
@@ -37,11 +38,14 @@ export class CardsComponent {
     this.moveTwo = ""
   }
 
-  hero = ""
-  @Output() heroCreated = new EventEmitter()
+  hero: string
+  @Output() heroCreated = new EventEmitter<Post>()
 
   createHero() {
-    this.heroCreated.emit(this.hero)
+    const post = {
+      hero: this.hero
+    }
+    this.heroCreated.emit(post)
     this.hero = ""
   }
 }

@@ -1,20 +1,28 @@
 mat-card {
   /* background-color: #33CA7F; */
-  background-color: #009FF1;
+  /* background-color: #009FF1; */
   margin: 0 auto;
+  margin-bottom: 30px;
   width: 50%;
-}
-
-mat-label {
-  color: #FFFFFF;
+  background-color: white;
+  color: black;
 }
 
 @media (max-width: 1000px) {
   mat-card {
     margin: 0px;
+    margin-bottom: 30px;
     width: 100%;
     border-radius: 0px;
   }
+}
+
+mat-label {
+  color: black;
+}
+
+::ng-deep.mat-form-field-underline {
+ background-color: #00A9F4 !important;
 }
 
 .new-card {
