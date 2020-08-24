@@ -14,13 +14,13 @@ import { MatListModule } from '@angular/material/list';
 
 import { AppComponent } from './app.component';
 import { CardsComponent } from './components/cards.component'
-import { MegaManComponent } from './components/mega-man.component';
+import { PostsComponent } from './components/posts.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     CardsComponent,
-    MegaManComponent
+    PostsComponent
   ],
   imports: [
     BrowserModule,
