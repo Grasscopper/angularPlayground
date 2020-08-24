@@ -38,11 +38,14 @@ export class CardsComponent {
     this.moveTwo = ""
   }
 
-  hero = ""
+  hero: string
   @Output() heroCreated = new EventEmitter<Post>()
 
   createHero() {
-    this.heroCreated.emit(this.hero)
+    const post = {
+      hero: this.hero
+    }
+    this.heroCreated.emit(post)
     this.hero = ""
   }
 }
