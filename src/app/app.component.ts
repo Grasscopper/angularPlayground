@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angularPlayground';
+  storedPosts = []
+
+  addNewPost(post) {
+    this.storedPosts.push(post)
+  }
 }

@@ -1,0 +1,14 @@
+mat-card {
+  /* background-color: #33CA7F; */
+  background-color: #009FF1;
+  margin: 0 auto;
+  width: 50%;
+}
+
+@media (max-width: 1000px) {
+  mat-card {
+    margin: 0px;
+    width: 100%;
+    border-radius: 0px;
+  }
+}

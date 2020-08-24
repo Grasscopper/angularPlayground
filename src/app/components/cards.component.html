@@ -35,6 +35,17 @@
   <button mat-raised-button color="accent" (click)="createCard()">Create</button>
 </mat-card>
 
+<mat-card>
+  <h1>Post Hero</h1>
+  <mat-form-field>
+    <mat-label>Hero</mat-label>
+    <input matInput placeholder="Ex: Thor" [(ngModel)]="hero">
+  </mat-form-field>
+  <br/>
+
+  <button mat-raised-button color="accent" (click)="createHero()">Post</button>
+</mat-card>
+
 <mat-card class="new-card">
   <div class="new-card-header">
     <h1 style="display: inline">{{postName}} </h1>
@@ -49,10 +60,4 @@
     <mat-grid-tile>{{postMoveOne}}</mat-grid-tile>
     <mat-grid-tile>{{postMoveTwo}}</mat-grid-tile>
   </mat-grid-list>
-</mat-card>
-
-<mat-card>
-  <mat-list *ngFor="let hero of heroes">
-   <mat-list-item>{{ hero }}</mat-list-item>
-  </mat-list>
 </mat-card>

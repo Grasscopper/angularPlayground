@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, EventEmitter, Output } from '@angular/core'
 
 @Component({
   selector: "app-cards",
@@ -21,13 +21,6 @@ export class CardsComponent {
   postMoveOne = "Brute Takedown";
   postMoveTwo = "Shield Throw";
 
-  heroes = [
-    "Thor",
-    "Black Widow",
-    "Wolverine",
-    "Mega Man"
-  ]
-
   createCard() {
     this.postName = this.name;
     this.postHp = this.hp;
@@ -35,5 +28,20 @@ export class CardsComponent {
     this.postDef = this.def;
     this.postMoveOne = this.moveOne;
     this.postMoveTwo = this.moveTwo;
+
+    this.name = ""
+    this.hp = ""
+    this.atk = ""
+    this.def = ""
+    this.moveOne = ""
+    this.moveTwo = ""
+  }
+
+  hero = ""
+  @Output() heroCreated = new EventEmitter()
+
+  createHero() {
+    this.heroCreated.emit(this.hero)
+    this.hero = ""
   }
 }
