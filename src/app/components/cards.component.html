@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">Avengers Trading Cards</mat-toolbar>
+<mat-toolbar color="primary" id="title">Pokemon Trading Cards</mat-toolbar>
 <mat-card>
   <h1>Character Card</h1>
   <mat-form-field>
@@ -40,9 +40,7 @@
     <h1 style="display: inline">{{postName}} </h1>
     <h1 style="display: inline" id="hp">{{postHp}} HP</h1>
   </div>
-  <div class="new-card-image">
-  <!-- <img src="https://cf-images.us-east-1.prod.boltdns.net/v1/static/5359769168001/0a823cb0-01a9-4835-a348-c64187783ccb/d37cb96c-805c-4aa2-9f2f-e62d9eb814c7/1280x720/match/image.jpg" /> -->
-  </div>
+
   <mat-grid-list cols="4" rowHeight="2:1">
     <mat-grid-tile>ATK: {{postAtk}}</mat-grid-tile>
     <mat-grid-tile>DEF: {{postDef}}</mat-grid-tile>
@@ -52,9 +50,22 @@
 </mat-card>
 
 <mat-card>
-  <h1>Post Hero</h1>
+  <h1>Pokemon</h1>
+  <button mat-raised-button color="accent" (click)="sort()">Sort</button>
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let poke of pokemon">
+      <ul>
+        <p>{{ poke.name }}</p>
+        <img [src]="poke.sprites.front_default" alt="Pokemon Image" />
+      </ul>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-card>
+
+<mat-card>
+  <h1>Post Comment</h1>
   <mat-form-field>
-    <mat-label>Hero</mat-label>
+    <mat-label>Comment</mat-label>
     <input matInput placeholder="Ex: Thor" [(ngModel)]="hero">
   </mat-form-field>
   <br/>
