@@ -42,10 +42,6 @@ img {
   border: solid;
 }
 
-.new-card-image {
-  text-align: center;
-}
-
 .new-card-header {
   display: flex;
   justify-content: space-between;
@@ -66,4 +62,13 @@ input {
 
 mat-grid-tile {
   font-size: 18px;
+}
+
+ul > p {
+  margin-top: 12px;
+  margin-bottom: 0px;
+}
+
+#title {
+  font-size: 38px;
 }
