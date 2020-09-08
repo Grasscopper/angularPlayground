@@ -15,12 +15,14 @@ import { MatListModule } from '@angular/material/list';
 import { AppComponent } from './app.component';
 import { CardsComponent } from './components/cards.component'
 import { PostsComponent } from './components/posts.component'
+import { VideoComponent } from './components/video.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     CardsComponent,
-    PostsComponent
+    PostsComponent,
+    VideoComponent
   ],
   imports: [
     BrowserModule,
