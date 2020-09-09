@@ -7,6 +7,8 @@ import { Component } from '@angular/core'
 })
 
 export class VideoComponent {
+  listening = false
+
   lofi(radio) {
     radio.src = "https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1"
     radio.style.visibility = "hidden"
@@ -25,5 +27,23 @@ export class VideoComponent {
   stop(radio) {
     radio.src = ""
     radio.style.visibility = "hidden"
+  }
+
+  controlRadio(radio) {
+    if (this.listening == false) {
+      this.listening = true
+      document.getElementsByClassName("lofi")[0].classList.remove("hide")
+      document.getElementsByClassName("dubstep")[0].classList.remove("hide")
+      document.getElementsByClassName("gaming")[0].classList.remove("hide")
+      document.getElementsByClassName("stop")[0].classList.remove("hide")
+    }
+    else if (this.listening) {
+      this.listening = false
+      this.stop(radio)
+      document.getElementsByClassName("lofi")[0].classList.add("hide")
+      document.getElementsByClassName("dubstep")[0].classList.add("hide")
+      document.getElementsByClassName("gaming")[0].classList.add("hide")
+      document.getElementsByClassName("stop")[0].classList.add("hide")
+    }
   }
 }

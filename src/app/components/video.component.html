@@ -1,15 +1,16 @@
 <mat-toolbar color="primary" id="title">Pokemon Trading Cards</mat-toolbar>
 
 <mat-card>
-<h1>Kiki's Radio Service</h1>
+<h1>My Apartment</h1>
 <div id="video-container">
   <div id="video-image">
     <iframe #radio id="radioVideo" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <img class="image1" src="/assets/Radio.png" (click)="controlRadio(radio)"/>
     <br/>
-    <button id="lofi" color="accent" mat-raised-button (click)="lofi(radio)">Lofi</button>
-    <button id="dubstep" color="accent" mat-raised-button (click)="dubstep(radio)">Dubstep</button>
-    <button id="gaming" color="accent" mat-raised-button (click)="gaming(radio)">Gaming</button>
-    <button color="primary" mat-raised-button (click)="stop(radio)">Stop Radio</button>
+    <button class="lofi hide" color="accent" mat-raised-button (click)="lofi(radio)">Lofi</button>
+    <button class="dubstep hide" color="accent" mat-raised-button (click)="dubstep(radio)">Dubstep</button>
+    <button class="gaming hide" color="accent" mat-raised-button (click)="gaming(radio)">Gaming</button>
+    <button class="stop hide" color="primary" mat-raised-button (click)="stop(radio)">Stop Radio</button>
   </div>
 </div>
 </mat-card>
