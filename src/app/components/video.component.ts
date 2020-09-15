@@ -46,4 +46,9 @@ export class VideoComponent {
       document.getElementsByClassName("stop")[0].classList.add("hide")
     }
   }
+
+  playingGames = false
+  playGames() {
+    this.playingGames = !this.playingGames
+  }
 }

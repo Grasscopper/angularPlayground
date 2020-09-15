@@ -12,7 +12,7 @@ mat-card {
     margin-bottom: 30px;
     width: 100%;
     border-radius: 0px;
-    height: 40%;
+    /* height: 40%; */
   }
 }
 
@@ -26,14 +26,18 @@ button {
   width: 20%;
 }
 
-.image1 {
+.apartmentRadio {
   position: relative;
   right: -110px;
   bottom: -20px;
 }
 
-.image1:hover {
+.apartmentRadio:hover {
   opacity: 0.60;
+}
+
+@media (max-width: 1680px) {
+  .apartmentRadio {display:none;}
 }
 
 h1 {
@@ -58,8 +62,8 @@ https://cdn.myanimelist.net/s/common/uploaded_files/1450839009-f9bf204c664b0498f
 
 }
 
-@media (max-width: 1000px) {
+/* @media (max-width: 1000px) {
   iframe {
     width: 95%;
   }
-}
+} */
