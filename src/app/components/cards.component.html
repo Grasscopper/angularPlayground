@@ -48,7 +48,7 @@
   </mat-grid-list>
 </mat-card>
 
-<mat-card>
+<!-- <mat-card>
   <h1>Pokemon</h1>
   <button mat-raised-button color="accent" (click)="sort()">Sort</button>
   <mat-grid-list cols="2" rowHeight="2:1">
@@ -59,15 +59,24 @@
       </ul>
     </mat-grid-tile>
   </mat-grid-list>
-</mat-card>
+</mat-card> -->
 
 <mat-card>
   <h1>Post Comment</h1>
-  <mat-form-field>
-    <mat-label>Comment</mat-label>
-    <input matInput placeholder="Ex: Thor" [(ngModel)]="hero">
-  </mat-form-field>
+  <form #myForm="ngForm" (submit)="createHero(myForm)" autocomplete="off">
+    <mat-form-field>
+      <mat-label>Comment</mat-label>
+      <input
+        #heroField="ngModel"
+        matInput
+        placeholder="Ex: Thor"
+        name="hero"
+        ngModel
+        required>
+      <mat-error *ngIf="heroField.invalid">Please Enter Comment</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="accent" type="submit">Post</button>
+  </form>
   <br/>
 
-  <button mat-raised-button color="accent" (click)="createHero()">Post</button>
 </mat-card>
