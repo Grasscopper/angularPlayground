@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core'
 import { Post } from '../models/post.model'
+import { NgForm } from '@angular/forms'
 
 @Component({
   selector: "app-cards",
@@ -67,11 +68,13 @@ export class CardsComponent {
   hero: string
   @Output() heroCreated = new EventEmitter<Post>()
 
-  createHero() {
+  createHero(form: NgForm) {
+    if (form.invalid) {
+      return
+    }
     const post = {
-      hero: this.hero
+      hero: form.value.hero
     }
     this.heroCreated.emit(post)
-    this.hero = ""
   }
 }
