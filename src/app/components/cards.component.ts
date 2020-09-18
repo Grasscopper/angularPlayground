@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core'
 import { Post } from '../models/post.model'
 import { NgForm } from '@angular/forms'
+import { PostService } from '../services/post.service'
 
 @Component({
   selector: "app-cards",
@@ -9,6 +10,8 @@ import { NgForm } from '@angular/forms'
 })
 
 export class CardsComponent {
+  constructor(public postService: PostService) {}
+
   pokemon = []
 
   ngOnInit() {
@@ -65,9 +68,6 @@ export class CardsComponent {
     this.moveTwo = ""
   }
 
-  hero: string
-  @Output() heroCreated = new EventEmitter<Post>()
-
   createHero(form: NgForm) {
     if (form.invalid) {
       return
@@ -75,6 +75,6 @@ export class CardsComponent {
     const post = {
       hero: form.value.hero
     }
-    this.heroCreated.emit(post)
+    this.postService.addPost(post)
   }
 }

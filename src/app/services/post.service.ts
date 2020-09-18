@@ -1,10 +1,10 @@
 import { Post } from '../models/post.model'
 
 export class PostService {
-  private posts: Post[] = []
+  posts: Post[] = []
 
   getPosts() {
-    return [...this.posts]
+    return this.posts
   }
 
   addPost(post: Post) {
