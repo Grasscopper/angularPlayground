@@ -76,5 +76,6 @@ export class CardsComponent {
       hero: form.value.hero
     }
     this.postService.addPost(post)
+    document.getElementById("heroField").value = ""
   }
 }
