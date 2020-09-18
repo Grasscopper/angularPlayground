@@ -9,9 +9,13 @@ import { PostService } from '../services/post.service'
 })
 
 export class PostsComponent {
-  @Input() posts: Post[] = []
-
   constructor(public postService: PostService) {}
   //the public keyword is a shortcut for
   //making postService accessible in this component
+  // postService: PostService
+  // constructor(postService: PostService) {
+  //   this.postService = postService
+  // }
+
+  posts = this.postService.getPosts()
 }
