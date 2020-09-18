@@ -17,6 +17,8 @@ import { CardsComponent } from './components/cards.component'
 import { PostsComponent } from './components/posts.component'
 import { VideoComponent } from './components/video.component'
 
+import { PostService } from './services/post.service'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,7 @@ import { VideoComponent } from './components/video.component'
     MatToolbarModule,
     MatListModule
   ],
-  providers: [],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
