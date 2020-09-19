@@ -66,6 +66,8 @@
   <ul>
     <li *ngFor="let post of repeatPosts">{{ post }}</li>
   </ul>
+  <button mat-raised-button color="primary" (click)="postCharacters()">Post Lizard</button>
+  <p>{{ postLizard.name }} {{ postLizard.skills }}</p>
   <h1>Post Comment</h1>
   <form #myForm="ngForm" (submit)="createHero(myForm)" autocomplete="off">
     <mat-form-field>

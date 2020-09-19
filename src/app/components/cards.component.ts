@@ -13,7 +13,7 @@ export class CardsComponent {
   constructor(public postService: PostService) {}
 
   pokemon = []
-  const express = "http://localhost:3000"
+  express = "http://localhost:3000"
 
   ngOnInit() {
     fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
@@ -82,7 +82,7 @@ export class CardsComponent {
 
   repeatPosts = []
   getPosts() {
-    fetch(`${this.express}/api/posts`)
+    fetch(`/api/posts`)
     .then((response) => {
       if (response.ok) {
         return response
@@ -101,5 +101,34 @@ export class CardsComponent {
     .catch((error) => {
       console.error(`Error fetching posts: ${error.message}`)
     })
+  }
+
+  lizard = {
+    name: "Lizard",
+    skills: "Agility"
+  }
+
+  postLizard = {
+    name: "",
+    skills: ""
+  }
+
+  postCharacters() {
+    fetch(`/api/characters`, {
+      method: "POST",
+      body: JSON.stringify(this.lizard),
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      this.postLizard = {
+        name: body.name,
+        skills: body.skills
+      }
+    })
+    .catch(error => console.error(error))
   }
 }
