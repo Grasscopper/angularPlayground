@@ -62,6 +62,10 @@
 </mat-card> -->
 
 <mat-card>
+  <button mat-raised-button color="accent" (click)="getPosts()">Get Posts</button>
+  <ul>
+    <li *ngFor="let post of repeatPosts">{{ post }}</li>
+  </ul>
   <h1>Post Comment</h1>
   <form #myForm="ngForm" (submit)="createHero(myForm)" autocomplete="off">
     <mat-form-field>

@@ -13,6 +13,7 @@ export class CardsComponent {
   constructor(public postService: PostService) {}
 
   pokemon = []
+  const express = "http://localhost:3000"
 
   ngOnInit() {
     fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
@@ -76,5 +77,29 @@ export class CardsComponent {
       hero: form.value.hero
     }
     this.postService.addPost(post)
+    form.resetForm()
+  }
+
+  repeatPosts = []
+  getPosts() {
+    fetch(`${this.express}/api/posts`)
+    .then((response) => {
+      if (response.ok) {
+        return response
+      } else {
+        let errorMessage = `${response.status}: ${response.statusText}`
+        let error = new Error(errorMessage)
+        throw(error)
+      }
+    })
+    .then((response) => {
+      return response.json()
+    })
+    .then((body) => {
+      this.repeatPosts = body
+    })
+    .catch((error) => {
+      console.error(`Error fetching posts: ${error.message}`)
+    })
   }
 }
