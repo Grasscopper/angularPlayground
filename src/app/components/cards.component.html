@@ -48,6 +48,8 @@
   </mat-grid-list>
 </mat-card>
 
+<app-character-tile></app-character-tile>
+
 <mat-card>
   <form #studentForm="ngForm" (submit)="postCharacters(studentForm)" autocomplete="off">
     <mat-form-field>
@@ -55,7 +57,6 @@
       <input
       #nameField="ngModel"
       matInput
-      placeholder="Shuichi Saihara"
       required
       name="name"
       ngModel>
@@ -66,7 +67,6 @@
       <input
       #talentField="ngModel"
       matInput
-      placeholder="Ultimate Detective"
       required
       name="talent"
       ngModel>
@@ -75,9 +75,9 @@
     <button mat-raised-button color="accent" type="submit">Post Character</button>
   </form>
   <ul>
-    <div *ngFor="let char of characters">
-      <li><strong>{{ char.name }}</strong></li>
-      <p>{{ char.talent }}</p>
+    <div *ngFor="let character of characterService.getCharacters()">
+      <li><strong>{{ character.name }}</strong></li>
+      <p>{{ character.talent }}</p>
     </div>
   </ul>
 </mat-card>
