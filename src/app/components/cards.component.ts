@@ -1,7 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core'
 import { Post } from '../models/post.model'
+import { Character } from '../models/character.model'
 import { NgForm } from '@angular/forms'
 import { PostService } from '../services/post.service'
+import { CharacterService } from '../services/character.service'
 
 @Component({
   selector: "app-cards",
@@ -10,13 +12,12 @@ import { PostService } from '../services/post.service'
 })
 
 export class CardsComponent {
-  constructor(public postService: PostService) {}
+  constructor(public postService: PostService, public characterService: CharacterService) {}
 
-  characters = []
   getCharacters() {
     fetch('/api/characters')
     .then(response => response.json())
-    .then(characters => this.characters = characters)
+    .then(characters => this.characterService.setCharacters(characters))
     .catch(error => console.error(error))
   }
 
@@ -31,7 +32,7 @@ export class CardsComponent {
       }
     })
     .then(response => response.json())
-    .then(newCharacter => this.characters.push(newCharacter))
+    .then(newCharacter => this.characterService.addCharacter(newCharacter))
     .catch(error => console.error(error))
     form.resetForm()
   }

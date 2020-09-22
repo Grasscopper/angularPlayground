@@ -16,15 +16,18 @@ import { AppComponent } from './app.component';
 import { CardsComponent } from './components/cards.component'
 import { PostsComponent } from './components/posts.component'
 import { VideoComponent } from './components/video.component'
+import { CharacterTileComponent } from './components/characterTile.component'
 
 import { PostService } from './services/post.service'
+import { CharacterService } from './services/character.service'
 
 @NgModule({
   declarations: [
     AppComponent,
     CardsComponent,
     PostsComponent,
-    VideoComponent
+    VideoComponent,
+    CharacterTileComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,7 @@ import { PostService } from './services/post.service'
     MatToolbarModule,
     MatListModule
   ],
-  providers: [PostService],
+  providers: [PostService, CharacterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
