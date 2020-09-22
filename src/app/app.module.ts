@@ -16,7 +16,7 @@ import { AppComponent } from './app.component';
 import { CardsComponent } from './components/cards.component'
 import { PostsComponent } from './components/posts.component'
 import { VideoComponent } from './components/video.component'
-import { CharacterTileComponent } from './components/characterTile.component'
+import { TileComponent } from './components/tile.component'
 
 import { PostService } from './services/post.service'
 import { CharacterService } from './services/character.service'
@@ -27,7 +27,7 @@ import { CharacterService } from './services/character.service'
     CardsComponent,
     PostsComponent,
     VideoComponent,
-    CharacterTileComponent
+    TileComponent
   ],
   imports: [
     BrowserModule,
