@@ -74,7 +74,9 @@
   </form>
   <ul>
     <div *ngFor="let character of characterService.getCharacters()">
-      <app-tile [character]="character"></app-tile>
+      <app-tile
+      [character]="character"
+      (sendDeleteCharacter)="deleteCharacter($event)"></app-tile>
     </div>
   </ul>
 </mat-card>

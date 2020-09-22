@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core'
+import { Component, Input, Output, EventEmitter } from '@angular/core'
 import { Character } from '../models/character.model'
 
 @Component({
@@ -8,8 +8,9 @@ import { Character } from '../models/character.model'
 })
 
 export class TileComponent {
-  @Input() character: any
-  toad() {
-    debugger
+  @Input() character: Character
+  @Output() sendDeleteCharacter = new EventEmitter()
+  delete() {
+    this.sendDeleteCharacter.emit(this.character._id)
   }
 }

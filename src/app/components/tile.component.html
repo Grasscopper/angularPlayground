@@ -1,2 +1,8 @@
 <li><strong>{{ character.name }}</strong></li>
-<p>{{ character.talent }}</p>
+<p class="characterTalent">{{ character.talent }}</p>
+<button
+  mat-raised-button
+  class="deleteButton"
+  (click)="delete()"
+  color="warn">
+  Delete</button>
