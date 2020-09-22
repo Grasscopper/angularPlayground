@@ -16,14 +16,30 @@ export class CardsComponent {
   getCharacters() {
     fetch('/api/characters')
     .then(response => response.json())
-    .then(body => this.characters = body)
+    .then(characters => this.characters = characters)
     .catch(error => console.error(error))
   }
 
+  postCharacters(form: NgForm) {
+    if (form.invalid) return
+    fetch('/api/characters', {
+      method: "POST",
+      body: JSON.stringify(form.value),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    })
+    .then(response => response.json())
+    .then(newCharacter => this.characters.push(newCharacter))
+    .catch(error => console.error(error))
+    form.resetForm()
+  }
+
   pokemon = []
-  express = "http://localhost:3000"
 
   ngOnInit() {
+    this.getCharacters()
     fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
     .then(response => response.json())
     .then(pokemon => {

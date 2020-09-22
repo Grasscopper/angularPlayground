@@ -49,7 +49,31 @@
 </mat-card>
 
 <mat-card>
-  <button mat-raised-button color="accent" (click)="getCharacters()">Get Characters</button>
+  <form #studentForm="ngForm" (submit)="postCharacters(studentForm)" autocomplete="off">
+    <mat-form-field>
+      <mat-label>Full Name</mat-label>
+      <input
+      #nameField="ngModel"
+      matInput
+      placeholder="Shuichi Saihara"
+      required
+      name="name"
+      ngModel>
+      <mat-error *ngIf="nameField.invalid">Please enter a name</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Talent</mat-label>
+      <input
+      #talentField="ngModel"
+      matInput
+      placeholder="Ultimate Detective"
+      required
+      name="talent"
+      ngModel>
+      <mat-error *ngIf="talentField.invalid">Please enter a talent</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="accent" type="submit">Post Character</button>
+  </form>
   <ul>
     <div *ngFor="let char of characters">
       <li><strong>{{ char.name }}</strong></li>
