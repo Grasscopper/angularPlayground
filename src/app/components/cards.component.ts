@@ -37,6 +37,19 @@ export class CardsComponent {
     form.resetForm()
   }
 
+  deleteCharacter(_id: string) {
+    fetch(`/api/characters/${_id}`, {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    })
+    .then(response => response.json())
+    .then(characters => this.characterService.setCharacters(characters))
+    .catch(error => console.error(error))
+  }
+
   pokemon = []
 
   ngOnInit() {

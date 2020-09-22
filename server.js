@@ -36,6 +36,16 @@ MongoClient.connect(process.env.DB_CONNECTION, { useUnifiedTopology: true }, (er
     res.json(newCharacter)
   })
 
+  app.delete('/api/characters/:id', (req, res) => {
+    characters.deleteOne({ _id: ObjectID(req.params.id) })
+    .then(() => {
+      return characters.find({}).toArray()
+    })
+    .then((characters) => {
+      res.json(characters)
+    })
+  })
+
   app.listen(port, () => {
     console.log(`Express app listening at http://localhost:${port}`)
   })
