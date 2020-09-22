@@ -48,6 +48,16 @@
   </mat-grid-list>
 </mat-card>
 
+<mat-card>
+  <button mat-raised-button color="accent" (click)="getCharacters()">Get Characters</button>
+  <ul>
+    <div *ngFor="let char of characters">
+      <li><strong>{{ char.name }}</strong></li>
+      <p>{{ char.talent }}</p>
+    </div>
+  </ul>
+</mat-card>
+
 <!-- <mat-card>
   <h1>Pokemon</h1>
   <button mat-raised-button color="accent" (click)="sort()">Sort</button>
@@ -62,12 +72,6 @@
 </mat-card> -->
 
 <mat-card>
-  <button mat-raised-button color="accent" (click)="getPosts()">Get Posts</button>
-  <ul>
-    <li *ngFor="let post of repeatPosts">{{ post }}</li>
-  </ul>
-  <button mat-raised-button color="primary" (click)="postCharacters()">Post Lizard</button>
-  <p>{{ postLizard.name }} {{ postLizard.skills }}</p>
   <h1>Post Comment</h1>
   <form #myForm="ngForm" (submit)="createHero(myForm)" autocomplete="off">
     <mat-form-field>

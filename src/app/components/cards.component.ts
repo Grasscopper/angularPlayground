@@ -12,6 +12,14 @@ import { PostService } from '../services/post.service'
 export class CardsComponent {
   constructor(public postService: PostService) {}
 
+  characters = []
+  getCharacters() {
+    fetch('/api/characters')
+    .then(response => response.json())
+    .then(body => this.characters = body)
+    .catch(error => console.error(error))
+  }
+
   pokemon = []
   express = "http://localhost:3000"
 
@@ -80,55 +88,4 @@ export class CardsComponent {
     form.resetForm()
   }
 
-  repeatPosts = []
-  getPosts() {
-    fetch(`/api/posts`)
-    .then((response) => {
-      if (response.ok) {
-        return response
-      } else {
-        let errorMessage = `${response.status}: ${response.statusText}`
-        let error = new Error(errorMessage)
-        throw(error)
-      }
-    })
-    .then((response) => {
-      return response.json()
-    })
-    .then((body) => {
-      this.repeatPosts = body
-    })
-    .catch((error) => {
-      console.error(`Error fetching posts: ${error.message}`)
-    })
-  }
-
-  lizard = {
-    name: "Lizard",
-    skills: "Agility"
-  }
-
-  postLizard = {
-    name: "",
-    skills: ""
-  }
-
-  postCharacters() {
-    fetch(`/api/characters`, {
-      method: "POST",
-      body: JSON.stringify(this.lizard),
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(response => response.json())
-    .then(body => {
-      this.postLizard = {
-        name: body.name,
-        skills: body.skills
-      }
-    })
-    .catch(error => console.error(error))
-  }
 }
