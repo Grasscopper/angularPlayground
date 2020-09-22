@@ -76,8 +76,7 @@
   </form>
   <ul>
     <div *ngFor="let character of characterService.getCharacters()">
-      <li><strong>{{ character.name }}</strong></li>
-      <p>{{ character.talent }}</p>
+      <app-tile [character]="character"></app-tile>
     </div>
   </ul>
 </mat-card>
