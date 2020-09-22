@@ -27,6 +27,15 @@ MongoClient.connect(process.env.DB_CONNECTION, { useUnifiedTopology: true }, (er
     })
   })
 
+  app.post('/api/characters', (req, res) => {
+    let newCharacter = {
+      name: req.body.name,
+      talent: req.body.talent
+    }
+    characters.insertOne(newCharacter)
+    res.json(newCharacter)
+  })
+
   app.listen(port, () => {
     console.log(`Express app listening at http://localhost:${port}`)
   })
