@@ -10,6 +10,8 @@ const app = express() //app is our Express app
 const port = 3000 //let's connect here
 const bodyParser = require('body-parser') //needed for posting and res.json()
 
+//current Server Discover and Monitoring Engine is deprecated
+//useUnifiedTopology: true for the new Server Discover and Monitoring engine
 MongoClient.connect(process.env.DB_CONNECTION, { useUnifiedTopology: true }, (err, client) => {
   if (err) return console.error(err)
   console.log('Connected to Database')
@@ -17,19 +19,12 @@ MongoClient.connect(process.env.DB_CONNECTION, { useUnifiedTopology: true }, (er
   const characters = db.collection('characters')
 
   app.use(bodyParser.json())
-  app.use(bodyParser.urlencoded( {extended: true} ))
 
-  app.get('/', (req, res) => {
-    res.send('Hello World!')
-  })
-
-  app.get('/api/posts', (req, res) => {
-    array = ["1", "2", "3"]
-    res.json(array)
-  })
-
-  app.post('/api/characters', (req, res) => {
-    res.json(req.body)
+  app.get('/api/characters', (req, res) => {
+    characters.find({}).toArray()
+    .then(documents => {
+      res.json(documents)
+    })
   })
 
   app.listen(port, () => {
