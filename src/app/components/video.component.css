@@ -16,6 +16,15 @@ mat-card {
   }
 }
 
+#title {
+  padding-left: 30px;
+  font-size: 24px;
+}
+
+#toolbar-wrapper {
+  background-color: red;
+}
+
 .hide {
   visibility: hidden;
 }
@@ -50,19 +59,21 @@ h1 {
   text-align: center;
 }
 
-#video-image {
-  background-image: url("/assets/AnimeRoom.jpg");
-  padding: 50px;
-  background-size: 880px 525px;
-  border: solid;
+#living-room-image {
+  background-image: url("/assets/AnimeRoomNight.jpg");
+  padding: 101px;
+  background-size: 897px 525px;
+  border-right: solid;
+}
+
+#bed-room-image {
+  background-image: url("/assets/AnimeBedroom.jpg");
+  padding: 101px;
+  background-size: 897px 525px;
 }
 
 /* Kiki's House
 https://cdn.myanimelist.net/s/common/uploaded_files/1450839009-f9bf204c664b0498f9d288b9857f071d.jpeg */
-
-#radioVideo {
-
-}
 
 /* @media (max-width: 1000px) {
   iframe {
