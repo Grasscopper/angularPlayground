@@ -73,10 +73,14 @@
     <button mat-raised-button color="accent" type="submit">Post Character</button>
   </form>
   <ul>
-    <div *ngFor="let character of characterService.getCharacters()">
-      <app-tile
-      [character]="character"
-      (sendDeleteCharacter)="deleteCharacter($event)"></app-tile>
+    <div class="grid-container">
+      <div class="grid-x">
+        <div class="small-4" *ngFor="let character of characterService.getCharacters()">
+          <app-tile
+          [character]="character"
+          (sendDeleteCharacter)="deleteCharacter($event)"></app-tile>
+        </div>
+      </div>
     </div>
   </ul>
 </mat-card>

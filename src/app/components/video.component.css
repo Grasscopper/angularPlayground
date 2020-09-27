@@ -28,8 +28,10 @@ button {
 
 .apartmentRadio {
   position: relative;
-  right: -110px;
-  bottom: -20px;
+  width: 6%;
+  height: 6%;
+  right: -115px;
+  bottom: 5px;
 }
 
 .apartmentRadio:hover {
