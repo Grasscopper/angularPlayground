@@ -5,3 +5,7 @@
 .deleteButton {
   margin-bottom: 30px;
 }
+
+strong {
+  font-size: 20px;
+}

@@ -15,7 +15,7 @@ export class CardsComponent {
   constructor(public postService: PostService, public characterService: CharacterService) {}
 
   getCharacters() {
-    fetch('/api/characters')
+    fetch('http://localhost:3000/api/characters')
     .then(response => response.json())
     .then(characters => this.characterService.setCharacters(characters))
     .catch(error => console.error(error))
@@ -23,7 +23,7 @@ export class CardsComponent {
 
   postCharacters(form: NgForm) {
     if (form.invalid) return
-    fetch('/api/characters', {
+    fetch('http://localhost:3000/api/characters', {
       method: "POST",
       body: JSON.stringify(form.value),
       headers: {
@@ -38,7 +38,7 @@ export class CardsComponent {
   }
 
   deleteCharacter(_id: string) {
-    fetch(`/api/characters/${_id}`, {
+    fetch(`http://localhost:3000/api/characters/${_id}`, {
       method: "DELETE",
       headers: {
         Accept: "application/json",

@@ -6,6 +6,7 @@ require('dotenv').config() //to access hidden connection string to MongoDB
 
 //Express
 const express = require('express') //give me Express
+const cors = require('cors')
 const app = express() //app is our Express app
 const port = 3000 //let's connect here
 const bodyParser = require('body-parser') //needed for posting and res.json()
@@ -18,6 +19,7 @@ MongoClient.connect(process.env.DB_CONNECTION, { useUnifiedTopology: true }, (er
   const db = client.db('playground')
   const characters = db.collection('characters')
 
+  app.use(cors())
   app.use(bodyParser.json())
 
   app.get('/api/characters', (req, res) => {
